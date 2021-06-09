@@ -57,18 +57,19 @@ const readNote = (title)=>{
 
 }
 
+//LoadNotes and Save Notes are used to read data and write data in notes.JSON file.
 const loadNotes = ()=>{
     try {
-        const dataBuffer = fs.readFileSync('notes.json')
-        const dataJSON = dataBuffer.toString()
-        return JSON.parse(dataJSON)
+        const dataBuffer = fs.readFileSync('notes.json')//data come sin binary format
+        const dataJSON = dataBuffer.toString()//converting binary format to JSON format
+        return JSON.parse(dataJSON)//converting JSON data to Javascript Object.
     } catch (error) {
         return []
     }
 }
 
 const saveNotes = (notes)=>{
-    notesJSON = JSON.stringify(notes)
+    notesJSON = JSON.stringify(notes)//converting Javascript Object to JSON data 
     fs.writeFileSync('notes.json',notesJSON)
 }
 

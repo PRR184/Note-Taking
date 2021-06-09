@@ -22,6 +22,7 @@ yargs.command({
             type: 'string'
         }
     },
+    //below handler is function and represented using ES6 property
     handler(argv) {
         notes.addNote(argv.title,argv.body)
     }
@@ -66,7 +67,7 @@ yargs.command({
     }
 })
 
-//To trigger the yargs.
-yargs.parse()
+//To trigger the yargs so that it parses arguments.
+yargs.parse()// To set above changes
 
 
